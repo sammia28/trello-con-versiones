@@ -1,43 +1,87 @@
-window.addEventListener("load", function(){
-	var listaAgregada = document.getElementById("js-add-agregarLista");
-	var formularioLista = document.getElementById("formularioLista");
-	var divAlmacena = document.getElementById("js-add-lista");
-//	variables formulario
-//	div boton guardar y cerrar
-	var listaControl = document.getElementById("js-lista-control");
+window.addEventListener("load", crearTrello);
+
+function crearTrello (){
+	var contenedor = document.getElementById("js-contenedor");
+	var lista = document.getElementById("js-add-lista");
+	var spanListaAgregada = document.getElementById("js-add-agregarLista");
+	var formulario = document.getElementById("js-formularioLista");
+	var listaInput = document.getElementById("js-lista-input");
 	var btnGuardar = document.getElementById("js-add-button");
-	var cerrar = document.getElementById("js-borrar");
+
+	spanListaAgregada.addEventListener("click", mostrarFormulario);
+	btnGuardar.addEventListener("click", aparecerTareas);		
 	
-	listaAgregada.addEventListener("click", mostrarFormulario);
 	function mostrarFormulario (e){
 		e.preventDefault();
-		listaAgregada.classList.add("ocultar");
-		formularioLista.classList.remove("ocultar");
+		spanListaAgregada.style.display="none";
+		formulario.style.display ="block";
+		listaInput.focus();
 	}
 	
-	btnGuardar.addEventListener("click", aparecerTareas);
-								
 	function aparecerTareas(e){
 		e.preventDefault();
-		formularioLista.classList.add("ocultar");
+		formulario.style.display ="none";
 		
-		var listaInput = document.getElementById("lista-input");
-		var divContenedor = document.createElement("div");
-		var titulo = document.createElement("h5");
-		var anadirTarjeta = document.createElement("a");
-		anadirTarjeta.setAttribute("href", "#");
-		anadirTarjeta.innerHTML = "Añadir una tarjeta...";
+		var spanCreado = document.createElement("span");
+		var botonNuevo = document.createElement("button");
+		spanCreado.innerHTML = listaInput.value;
 		
-		titulo.innerHTML = listaInput.value;
+		spanCreado.setAttribute("id", "spanCreado");
+		spanCreado.innerHTML = listaInput.value;
+		botonNuevo.setAttribute("id", "botonNuevo");
+		botonNuevo.innerHTML ="Añadir tarjeta...";
 		
-		divAlmacena.appendChild(divContenedor);
-		divContenedor.appendChild(titulo);
-		divContenedor.appendChild(anadirTarjeta);
+		spanListaAgregada.parentElement.appendChild(spanCreado);
+		spanListaAgregada.parentElement.appendChild(botonNuevo);
+		listaInput.value="";
 		
-		
+		var divCreado = document.createElement("div");
+	botonNuevo.parentElement.insertBefore(divCreado,botonNuevo.parentElement.children[3]);
+		divCreado.setAttribute("class", "divCreado");
+		botonNuevo.addEventListener("click", blabla);
+		botonNuevo.addEventListener("click", nuevaFila);		
 	}
 	
 	
+	function nuevaFila(){
+		var nuevoDiv = document.createElement("div");
+		contenedor.appendChild(nuevoDiv);
+		nuevoDiv.setAttribute("id", "nuevoDiv");
+		nuevoDiv.appendChild(botonNuevo);
+		nuevoDiv.appendChild(formNuevo);
+		botonNuevo.style.display = "inline-block";
+		
+	}	
 	
-	
-});
+	function blabla (e){
+		e.preventDefault();
+/*		botonNuevo.style.display ="none";*/
+			
+		var formNuevo = document.createElement("form");
+		divCreado.appendChild(formNuevo);
+		formNuevo.setAttribute("class", "formNuevo");
+		var textArea = document.createElement("textarea");
+		formNuevo.appendChild(textArea);
+		textArea.focus();
+		textArea.setAttribute("class", "textarea");
+		var botonTextArea = document.createElement("button");
+		formNuevo.appendChild(botonTextArea);
+		botonTextArea.setAttribute("class", "botonTextArea");
+		botonTextArea.innerHTML ="Guardar";
+		botonTextArea.addEventListener("click", function(e){
+				e.preventDefault();
+				formNuevo.style.display = "none";
+
+				var newSpan = document.createElement("span");
+				newSpan.innerHTML = textArea.value;
+				divCreado.appendChild(newSpan);
+				lista.appendChild(botonNuevo);
+				botonNuevo.style.display = "block";
+				newSpan.setAttribute("class","newSpan");
+	/*			newSpan.setAttribute("id", "idNewSpan");
+				newSpan.setAttribute("draggable", "true");*/
+				botonNuevo.style.display ="inline-block";						   
+		});		
+	}
+
+};

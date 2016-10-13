@@ -1,3 +1,72 @@
-.ocultar{
-    display: none;
+.lista-contenedor{
+    display: inline-block;
 }
+header{
+    background-color: greenyellow;
+}
+header{
+    background-color: #0067A3;
+    height: 60px;
+}
+
+
+.tableros{
+    color: #f3f3f3;
+    display: inline-block;
+    font-weight: 700;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 25px;
+    min-width: 30px;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+}
+.busqueda, .tableros{
+    display: inline-block;
+    background-color: #4C94BF;
+    border-color: #4C94BF;
+    border-radius: 5px;
+    height: 36px;
+    margin-top: 5px;
+    padding: 4px 10px;
+}
+.logo-trello{
+    color:  7FB2D1;
+}
+.usuario{
+    color: white;
+    padding: 5px;
+    background-color: #3888B7;
+    margin-top: -12px;
+}
+#suma{
+    display: inline-block;
+    color: white;
+    border-radius: 4px;
+    background: #3A89B8;
+    font-size: 18px;
+    line-height: 25px;
+    margin: -4px;
+    margin-left: 37%;
+    padding: 1px 14px;
+    width: 0;
+}
+
+.lista-contenedor{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}
+.contenedorNuevo{
+    display: inline-block;
+}
+#lista-contenedor{
+    display: inline-block;
+}
+
+
+
+
+
