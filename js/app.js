@@ -40,7 +40,7 @@ function crearTrello (){
 	botonNuevo.parentElement.insertBefore(divCreado,botonNuevo.parentElement.children[3]);
 		divCreado.setAttribute("class", "divCreado");
 		botonNuevo.addEventListener("click", function(){
-			blabla(e, divCreado);
+			crearFormNuevo(e, divCreado);
 		});
 	}
 	btnGuardar.addEventListener("click", nuevaFila);
@@ -48,13 +48,14 @@ function crearTrello (){
 		var nuevoDiv = document.createElement("div");
 		contenedor.appendChild(nuevoDiv);
 		nuevoDiv.setAttribute("id", "nuevoDiv");
+		nuevoDiv.setAttribute("class", "divContenedor")
 		nuevoDiv.appendChild(spanListaAgregada);
 		nuevoDiv.appendChild(formulario);
 		spanListaAgregada.style.display = "inline-block";
 		
 	}	
 	
-	function blabla (e, contenedor){
+	function crearFormNuevo (e, contenedor){
 		e.preventDefault();
 		botonNuevo.style.display ="none";
 			

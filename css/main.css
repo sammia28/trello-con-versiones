@@ -66,11 +66,12 @@ header{
 }
 
 #js-add-agregarLista {
-    border-radius: 6px;
-    color: #A7CCE1;
     background: #006BA9;
-    margin-left: 14px;
-    padding: 9px 7% 9px 9px;
+    padding: 7px;
+    color: rgba(255,255,255,.7);
+    -webkit-transition: color 85ms ease-in;
+    transition: color 85ms ease-in;
+    white-space: nowrap;
 }
 #js-lista-input {
     border-radius: 6px;
@@ -80,9 +81,11 @@ header{
     margin-left: 14px;
 }
 #js-formularioLista {
-    background: #E2E4E6;
-    margin-left: 6px;
-    padding: 6px 2px 2px 0px;
+height: auto;
+    min-height: 30px;
+    padding: 4px;
+    border-radius: 3px;
+    background-color: #E2E4E6
 }
 #js-add-button {
     background: #5DB248;
@@ -92,6 +95,9 @@ header{
     color: white;
     margin-bottom: 6px;
     margin-left: 10px;
+}
+.divContenedor{
+
 }
 
 
