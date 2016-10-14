@@ -11,32 +11,36 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-     <header>
-         <div class="row">
-         	<a class="header-btn tableros tableros" href="#">
-            	<span class="header-btn-text">
-                    <i class="fa fa-trello" aria-hidden="true"></i>
-                </span>Tableros
-            </a>
-            <div class="col-xs-3 col-offset-1">
-            	<div class="input-group">
-                	<input type="text" class="form-control busqueda" aria-label="...">
+    <header>
+        <div class="container-fluid">
+             <div class="row">
+                <div class="col-xs-2">
+                    <a class="header-btn tableros tableros" href="#">
+                        <span class="header-btn-text">
+                            <i class="fa fa-trello" aria-hidden="true"></i>
+                        </span>Tableros
+                   </a>
                 </div>
-            </div>
-            <img src="img/header-logo.png" alt="trello" class="logo-trello">
-            <div>
-            	<div class="col-xs-1">
-                	<span class="glyphicon glyphicon-plus" id="suma"></span>
+                <div class="col-xs-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control busqueda" aria-label="...">
+                    </div>
+                </div>   
+                <div class="col-xs-2 col-xs-offset-1">
+                    <img src="img/header-logo.png" alt="trello" class="logo-trello">
+                </div>                                                                        
+                <div class="col-xs-2 col-xs-offset-5">
+                    <span class="glyphicon glyphicon-plus" id="suma"></span>
+                    <div class="usuario">Sammia Zubizarreta</div>
                 </div>
-                <div class="col-xs-3 usuario">Sammia Zubizarreta</div>
-            </div>
-         </div> 
+            </div> 
+        </div>
      </header>
      <section>
         <div id="js-contenedor">
             <div id="js-add-lista" class="lista-contenedor">
                 <span id="js-add-agregarLista">Añadir una lista...</span>
-                <form id="js-formularioLista" style="display:none">
+                <form class="col-xs-2" id="js-formularioLista" style="display:none">
                     <input id="js-lista-input" type="text" placeholder="Añadir una lista...">
                     <input id="js-add-button" type="submit" value="Guardar">
                     <a id="js-borrar" href="#"></a>

@@ -1,14 +1,14 @@
+body{
+    background-color: #0079BF;
+}
 .lista-contenedor{
     display: inline-block;
 }
-header{
-    background-color: greenyellow;
-}
+/*header*/
 header{
     background-color: #0067A3;
     height: 60px;
 }
-
 
 .tableros{
     color: #f3f3f3;
@@ -48,11 +48,10 @@ header{
     background: #3A89B8;
     font-size: 18px;
     line-height: 25px;
-    margin: -4px;
-    margin-left: 37%;
-    padding: 1px 14px;
-    width: 0;
+    /* margin-top: 1px; */
+    padding: 1px 9px;
 }
+/*header*/
 
 .lista-contenedor{
     display: inline-block;
@@ -62,10 +61,38 @@ header{
 .contenedorNuevo{
     display: inline-block;
 }
-#lista-contenedor{
-    display: inline-block;
+.newSpan {
+    display: block;
 }
 
+#js-add-agregarLista {
+    border-radius: 6px;
+    color: #A7CCE1;
+    background: #006BA9;
+    margin-left: 14px;
+    padding: 9px 7% 9px 9px;
+}
+#js-lista-input {
+    border-radius: 6px;
+    color:#919191;
+    background:#D7D9DB;
+    padding: 9px;
+    margin-left: 14px;
+}
+#js-formularioLista {
+    background: #E2E4E6;
+    margin-left: 6px;
+    padding: 6px 2px 2px 0px;
+}
+#js-add-button {
+    background: #5DB248;
+    border-radius: 6px;
+    padding: 5px 17px;
+    margin-top: 1px;
+    color: white;
+    margin-bottom: 6px;
+    margin-left: 10px;
+}
 
 
 

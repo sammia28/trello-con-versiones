@@ -7,9 +7,11 @@ function crearTrello (){
 	var formulario = document.getElementById("js-formularioLista");
 	var listaInput = document.getElementById("js-lista-input");
 	var btnGuardar = document.getElementById("js-add-button");
+		var botonNuevo = document.createElement("button");
 
 	spanListaAgregada.addEventListener("click", mostrarFormulario);
 	btnGuardar.addEventListener("click", aparecerTareas);		
+	nuevaFila();
 	
 	function mostrarFormulario (e){
 		e.preventDefault();
@@ -23,7 +25,6 @@ function crearTrello (){
 		formulario.style.display ="none";
 		
 		var spanCreado = document.createElement("span");
-		var botonNuevo = document.createElement("button");
 		spanCreado.innerHTML = listaInput.value;
 		
 		spanCreado.setAttribute("id", "spanCreado");
@@ -38,27 +39,27 @@ function crearTrello (){
 		var divCreado = document.createElement("div");
 	botonNuevo.parentElement.insertBefore(divCreado,botonNuevo.parentElement.children[3]);
 		divCreado.setAttribute("class", "divCreado");
-		botonNuevo.addEventListener("click", blabla);
-		botonNuevo.addEventListener("click", nuevaFila);		
+		botonNuevo.addEventListener("click", function(){
+			blabla(e, divCreado);
+		});
 	}
-	
-	
+	btnGuardar.addEventListener("click", nuevaFila);
 	function nuevaFila(){
 		var nuevoDiv = document.createElement("div");
 		contenedor.appendChild(nuevoDiv);
 		nuevoDiv.setAttribute("id", "nuevoDiv");
-		nuevoDiv.appendChild(botonNuevo);
-		nuevoDiv.appendChild(formNuevo);
-		botonNuevo.style.display = "inline-block";
+		nuevoDiv.appendChild(spanListaAgregada);
+		nuevoDiv.appendChild(formulario);
+		spanListaAgregada.style.display = "inline-block";
 		
 	}	
 	
-	function blabla (e){
+	function blabla (e, contenedor){
 		e.preventDefault();
-/*		botonNuevo.style.display ="none";*/
+		botonNuevo.style.display ="none";
 			
 		var formNuevo = document.createElement("form");
-		divCreado.appendChild(formNuevo);
+		contenedor.appendChild(formNuevo);
 		formNuevo.setAttribute("class", "formNuevo");
 		var textArea = document.createElement("textarea");
 		formNuevo.appendChild(textArea);
@@ -74,7 +75,8 @@ function crearTrello (){
 
 				var newSpan = document.createElement("span");
 				newSpan.innerHTML = textArea.value;
-				divCreado.appendChild(newSpan);
+			
+				contenedor.appendChild(newSpan);
 				lista.appendChild(botonNuevo);
 				botonNuevo.style.display = "block";
 				newSpan.setAttribute("class","newSpan");
