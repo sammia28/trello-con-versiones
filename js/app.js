@@ -7,11 +7,13 @@ function crearTrello (){
 	var formulario = document.getElementById("js-formularioLista");
 	var listaInput = document.getElementById("js-lista-input");
 	var btnGuardar = document.getElementById("js-add-button");
-		var botonNuevo = document.createElement("button");
 
 	spanListaAgregada.addEventListener("click", mostrarFormulario);
-	btnGuardar.addEventListener("click", aparecerTareas);		
-	nuevaFila();
+	btnGuardar.addEventListener("click", function(e){
+		e.preventDefault();
+		aparecerTareas();
+		nuevaFila();
+	});		
 	
 	function mostrarFormulario (e){
 		e.preventDefault();
@@ -20,15 +22,14 @@ function crearTrello (){
 		listaInput.focus();
 	}
 	
-	function aparecerTareas(e){
-		e.preventDefault();
+	function aparecerTareas(){
 		formulario.style.display ="none";
 		
 		var spanCreado = document.createElement("span");
 		spanCreado.innerHTML = listaInput.value;
+		var botonNuevo = document.createElement("button");
 		
 		spanCreado.setAttribute("id", "spanCreado");
-		spanCreado.innerHTML = listaInput.value;
 		botonNuevo.setAttribute("id", "botonNuevo");
 		botonNuevo.innerHTML ="Añadir tarjeta...";
 		
@@ -37,13 +38,14 @@ function crearTrello (){
 		listaInput.value="";
 		
 		var divCreado = document.createElement("div");
-	botonNuevo.parentElement.insertBefore(divCreado,botonNuevo.parentElement.children[3]);
+		botonNuevo.parentElement.insertBefore(divCreado,botonNuevo.parentElement.children[3]);
 		divCreado.setAttribute("class", "divCreado");
-		botonNuevo.addEventListener("click", function(){
-			crearFormNuevo(e, divCreado);
+		botonNuevo.addEventListener("click", function(e){
+			e.preventDefault();
+			crearFormNuevo(divCreado, botonNuevo);
 		});
 	}
-	btnGuardar.addEventListener("click", nuevaFila);
+	
 	function nuevaFila(){
 		var nuevoDiv = document.createElement("div");
 		contenedor.appendChild(nuevoDiv);
@@ -55,12 +57,10 @@ function crearTrello (){
 		
 	}	
 	
-	function crearFormNuevo (e, contenedor){
-		e.preventDefault();
+	function crearFormNuevo (content, botonNuevo){
 		botonNuevo.style.display ="none";
-			
 		var formNuevo = document.createElement("form");
-		contenedor.appendChild(formNuevo);
+		content.appendChild(formNuevo);
 		formNuevo.setAttribute("class", "formNuevo");
 		var textArea = document.createElement("textarea");
 		formNuevo.appendChild(textArea);
@@ -69,22 +69,17 @@ function crearTrello (){
 		var botonTextArea = document.createElement("button");
 		formNuevo.appendChild(botonTextArea);
 		botonTextArea.setAttribute("class", "botonTextArea");
-		botonTextArea.innerHTML ="Guardar";
+		botonTextArea.innerHTML ="Añadir";
 		botonTextArea.addEventListener("click", function(e){
 				e.preventDefault();
 				formNuevo.style.display = "none";
 
 				var newSpan = document.createElement("span");
 				newSpan.innerHTML = textArea.value;
-			
-				contenedor.appendChild(newSpan);
-				lista.appendChild(botonNuevo);
-				botonNuevo.style.display = "block";
+				content.appendChild(newSpan);
 				newSpan.setAttribute("class","newSpan");
-	/*			newSpan.setAttribute("id", "idNewSpan");
-				newSpan.setAttribute("draggable", "true");*/
+				newSpan.setAttribute("draggable", "true")
 				botonNuevo.style.display ="inline-block";						   
 		});		
 	}
-
 };

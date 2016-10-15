@@ -2,7 +2,11 @@ body{
     background-color: #0079BF;
 }
 .lista-contenedor{
-    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    padding: 9px;
+    margin-left: 1%;
+    border-radius: 5px;
 }
 /*header*/
 header{
@@ -11,19 +15,21 @@ header{
 }
 
 .tableros{
+    background-color: #4C94BF;
+    border-radius: 5px;
     color: #f3f3f3;
     display: inline-block;
     font-weight: 700;
     float: left;
-    height: 30px;
+    height: 36px;
     line-height: 30px;
     margin-left: 25px;
     min-width: 30px;
-    padding: 0;
+    margin-top: 9px;
+    padding: 4px 10px;
     position: relative;
-    text-decoration: none;
 }
-.busqueda, .tableros{
+.busqueda{
     display: inline-block;
     background-color: #4C94BF;
     border-color: #4C94BF;
@@ -32,15 +38,24 @@ header{
     margin-top: 5px;
     padding: 4px 10px;
 }
+
+.busqueda{
+    border-radius: 5px;
+}
+
 .logo-trello{
     color:  7FB2D1;
 }
+
 .usuario{
     color: white;
     padding: 5px;
     background-color: #3888B7;
-    margin-top: -12px;
+    margin-top: -14px;
+    margin-left: 50px;
+    border-radius: 5px;
 }
+
 #suma{
     display: inline-block;
     color: white;
@@ -48,7 +63,6 @@ header{
     background: #3A89B8;
     font-size: 18px;
     line-height: 25px;
-    /* margin-top: 1px; */
     padding: 1px 9px;
 }
 /*header*/
@@ -58,35 +72,49 @@ header{
     vertical-align: top;
     width: 20%;
 }
+.span{
+    cursor: pointer;
+}
 .contenedorNuevo{
     display: inline-block;
 }
 .newSpan {
+    background: #FFFFFF;
+    border-radius: 4px;
+    color: #808080;
     display: block;
+    padding: 4px;
+    margin: 5px;
+    word-wrap: break-word;
 }
 
 #js-add-agregarLista {
     background: #006BA9;
-    padding: 7px;
+    padding: 7px 121px 7px 21px;
     color: rgba(255,255,255,.7);
-    -webkit-transition: color 85ms ease-in;
+    margin-left: 12px;
     transition: color 85ms ease-in;
     white-space: nowrap;
 }
+
 #js-lista-input {
     border-radius: 6px;
-    color:#919191;
-    background:#D7D9DB;
-    padding: 9px;
-    margin-left: 14px;
+    color: #919191;
+    background: #D7D9DB;
+    padding: 7px 52px 7px 21px;
+    margin-left: 10px;
+    word-wrap: break-word;
 }
+
 #js-formularioLista {
-height: auto;
+    height: auto;
     min-height: 30px;
     padding: 4px;
     border-radius: 3px;
-    background-color: #E2E4E6
+    background-color: #E2E4E6;
+    width: 107%;
 }
+
 #js-add-button {
     background: #5DB248;
     border-radius: 6px;
@@ -96,10 +124,53 @@ height: auto;
     margin-bottom: 6px;
     margin-left: 10px;
 }
-.divContenedor{
 
+.divContenedor{
+    border-radius: 3px;
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
 }
 
+#botonNuevo{
+    width: 100%;
+    background: #E2E4E6;
+    border: none;
+    color: #8F8F8F;
+    text-decoration: underline;
+}
+
+#spanCreado {
+    width: 100%;
+    background: #E2E4E6;
+    border: none;
+    display: inline-block;
+    padding: 9px;
+}
+
+.formNuevo {
+    padding: 0.5em;
+    background: #E2E4E6;
+}
+.textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: none;
+    resize: none;
+}
+.botonTextArea {
+    background: #5CAF46;
+    color: white;
+    border: none;
+    padding: 5px 17px;
+    border-radius: 5px;
+}
+.divCreado {
+    background: #E2E4E6;
+    padding: 3px;
+}
 
 
 
