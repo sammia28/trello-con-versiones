@@ -3,29 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <title>Trello</title>
-        <link rel="icon" type="image/png" href="img/logo-fav.png" />
+        <link rel="icon" type="image/png" href="img/logo-fav.png">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body id="cuerpo">
     <header>
-        <div class="container-fluid">
-            <a class="header-btn tableros tableros" href="#">
-                <span class="header-btn-text">
-                    <i class="fa fa-trello" aria-hidden="true"></i>
-                </span>Tableros
-            </a>
-            <div class="col-xs-2 col-xs-offset-1">
-                <img src="img/header-logo.png" alt="trello" class="logo-trello">
-            </div>                                                                        
-            <div class="col-xs-3 col-xs-offset-5">
-                <div>
-                    <span class="glyphicon glyphicon-plus" id="suma"></span>
-                    <p class="usuario">Sammia Zubizarreta</p>
-                </div>
-            </div>
-        </div> 
+    	<div>
+    		<div>
+				<div>
+					<button class="header-btn tableros tableros" href="#">
+						<span class="header-btn-text">
+							<i class="fa fa-trello" aria-hidden="true"></i>
+						</span>Tableros
+					</button>
+				</div>
+				<div>
+				    <input type="text" >
+				</div>
+				<div>
+					<img src="img/header-logo.png" alt="trello" class="logo-trello">
+				</div>
+				<div>
+					<button  class="glyphicon glyphicon-plus" id="suma"></button>
+				</div>
+				<div>
+                    <button type="button" class="usuario">Sammia Zubizarreta</button>
+				</div>
+				<div></div>
+				<div></div>
+    		</div>
+    	</div>
     </header>
     <section>
         <div id="js-contenedor">
@@ -34,7 +43,7 @@
                 <form id="js-formularioLista" style="display:none">
                     <input id="js-lista-input" type="text" placeholder="Añadir una lista...">
                     <input id="js-add-button" type="submit" value="Guardar">
-<!--                    <a id="js-borrar" href="#"></a>-->
+                    <a id="js-borrar" href="#">X</a>
                 </form>
             </div>
         </div>

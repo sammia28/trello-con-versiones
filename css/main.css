@@ -1,6 +1,21 @@
 body{
     background-color: #0079BF;
 }
+/*header*/
+header{
+    background-color: #0067A3;
+    height: 60px;
+    margin-bottom: 16px;
+}
+
+.logo-trello{
+    color:  7FB2D1;
+}
+
+
+
+/*header*/
+
 .lista-contenedor{
     vertical-align: top;
     width: 20%;
@@ -8,64 +23,6 @@ body{
     margin-left: 1%;
     border-radius: 5px;
 }
-/*header*/
-header{
-    background-color: #0067A3;
-    height: 60px;
-}
-
-.tableros{
-    background-color: #4C94BF;
-    border-radius: 5px;
-    color: #f3f3f3;
-    display: inline-block;
-    font-weight: 700;
-    float: left;
-    height: 36px;
-    line-height: 30px;
-    margin-left: 25px;
-    min-width: 30px;
-    margin-top: 9px;
-    padding: 4px 10px;
-    position: relative;
-}
-.busqueda{
-    display: inline-block;
-    background-color: #4C94BF;
-    border-color: #4C94BF;
-    border-radius: 5px;
-    height: 36px;
-    margin-top: 5px;
-    padding: 4px 10px;
-}
-
-.busqueda{
-    border-radius: 5px;
-}
-
-.logo-trello{
-    color:  7FB2D1;
-}
-
-.usuario{
-    color: white;
-    padding: 5px;
-    background-color: #3888B7;
-    margin-top: -14px;
-    margin-left: 50px;
-    border-radius: 5px;
-}
-
-#suma{
-    display: inline-block;
-    color: white;
-    border-radius: 4px;
-    background: #3A89B8;
-    font-size: 18px;
-    line-height: 25px;
-    padding: 1px 9px;
-}
-/*header*/
 
 .lista-contenedor{
     display: inline-block;
@@ -75,9 +32,11 @@ header{
 .span{
     cursor: pointer;
 }
+
 .contenedorNuevo{
     display: inline-block;
 }
+
 .newSpan {
     background: #FFFFFF;
     border-radius: 4px;
@@ -104,6 +63,7 @@ header{
     padding: 7px 52px 7px 21px;
     margin-left: 10px;
     word-wrap: break-word;
+    border-color: #AAAAAA;
 }
 
 #js-formularioLista {
@@ -130,6 +90,7 @@ header{
     display: inline-block;
     width: 20%;
     vertical-align: top;
+    margin: 10px;
 }
 
 #botonNuevo{
@@ -152,6 +113,7 @@ header{
     padding: 0.5em;
     background: #E2E4E6;
 }
+
 .textarea {
     display: block;
     width: 100%;
@@ -160,6 +122,7 @@ header{
     border: none;
     resize: none;
 }
+
 .botonTextArea {
     background: #5CAF46;
     color: white;
@@ -167,10 +130,24 @@ header{
     padding: 5px 17px;
     border-radius: 5px;
 }
+
 .divCreado {
     background: #E2E4E6;
     padding: 3px;
 }
 
-
+#textareaElimina, #js-borrar{
+    color: #999999;
+    font-size: 18px;
+    line-height: 30px;
+    margin-left: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.oculta{
+    display: none;
+}
+.aparece{
+    display: block;
+}
 

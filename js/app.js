@@ -7,7 +7,8 @@ function crearTrello (){
 	var formulario = document.getElementById("js-formularioLista");
 	var listaInput = document.getElementById("js-lista-input");
 	var btnGuardar = document.getElementById("js-add-button");
-
+	var elimina = document.getElementById("js-borrar");
+	
 	spanListaAgregada.addEventListener("click", mostrarFormulario);
 	btnGuardar.addEventListener("click", function(e){
 		e.preventDefault();
@@ -22,19 +23,31 @@ function crearTrello (){
 		listaInput.focus();
 	}
 	
+	elimina.addEventListener("click", cerrar);
+	function cerrar (){
+		formulario.style.display="none";
+		spanListaAgregada.style.display = "block";
+		
+	}
+	
 	function aparecerTareas(){
 		formulario.style.display ="none";
 		
 		var spanCreado = document.createElement("span");
 		spanCreado.innerHTML = listaInput.value;
-		var botonNuevo = document.createElement("button");
 		
+		var botonNuevo = document.createElement("button");
 		spanCreado.setAttribute("id", "spanCreado");
 		botonNuevo.setAttribute("id", "botonNuevo");
 		botonNuevo.innerHTML ="Añadir tarjeta...";
 		
 		spanListaAgregada.parentElement.appendChild(spanCreado);
 		spanListaAgregada.parentElement.appendChild(botonNuevo);
+		
+		if (listaInput.value){
+			btnGuardar.disabled = true;
+		}
+		
 		listaInput.value="";
 		
 		var divCreado = document.createElement("div");
@@ -59,17 +72,27 @@ function crearTrello (){
 	
 	function crearFormNuevo (content, botonNuevo){
 		botonNuevo.style.display ="none";
+		
 		var formNuevo = document.createElement("form");
 		content.appendChild(formNuevo);
 		formNuevo.setAttribute("class", "formNuevo");
+		
 		var textArea = document.createElement("textarea");
 		formNuevo.appendChild(textArea);
 		textArea.focus();
 		textArea.setAttribute("class", "textarea");
+		
 		var botonTextArea = document.createElement("button");
 		formNuevo.appendChild(botonTextArea);
 		botonTextArea.setAttribute("class", "botonTextArea");
 		botonTextArea.innerHTML ="Añadir";
+		
+		var eliminaTarjeta = document.createElement("a");
+		formNuevo.appendChild(eliminaTarjeta);
+		eliminaTarjeta.setAttribute("id", "textareaElimina");
+		eliminaTarjeta.setAttribute("a", "#");
+		eliminaTarjeta.textContent = "X";
+		
 		botonTextArea.addEventListener("click", function(e){
 				e.preventDefault();
 				formNuevo.style.display = "none";
@@ -80,6 +103,12 @@ function crearTrello (){
 				newSpan.setAttribute("class","newSpan");
 				newSpan.setAttribute("draggable", "true")
 				botonNuevo.style.display ="inline-block";						   
-		});		
+		});	
+		
+		eliminaTarjeta.addEventListener("click", aparecerTarjeta);
+		function aparecerTarjeta (){
+			formNuevo.style.display="none";
+			botonNuevo.style.display = "block";
+		}
 	}
 };
