@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background-color: #0079BF;
 }
@@ -6,22 +11,37 @@ header{
     background-color: #0067A3;
     height: 60px;
     margin-bottom: 16px;
+    width: 100%;
 }
 
-.logo-trello{
-    color:  7FB2D1;
+.header-btn, .input-busqueda{
+    background: #428EBA;
+    border-radius: 3px;
+    border: 1px #5197C0;
+    color: #f3f3f3;
+    display: inline-block;
+    font-weight: 700;
+    float: left;
+    height: 30px;
+    margin: 9px;
+    min-width: 30px;
+    padding: 0 19px;
+    position: relative;
 }
 
-
+.logo-trello {
+    margin-left: 18%;
+    margin-top: 8px;
+}
 
 /*header*/
 
 .lista-contenedor{
-    vertical-align: top;
-    width: 20%;
-    padding: 9px;
-    margin-left: 1%;
     border-radius: 5px;
+    margin-left: 1%;
+    padding: 9px;
+    width: 20%;
+    vertical-align: top;
 }
 
 .lista-contenedor{
@@ -144,10 +164,5 @@ header{
     text-decoration: none;
     cursor: pointer;
 }
-.oculta{
-    display: none;
-}
-.aparece{
-    display: block;
-}
+
 
