@@ -14,11 +14,12 @@ header{
     width: 100%;
 }
 
-.header-btn, .input-busqueda{
+.header-btn, .input-busqueda, .usuario, .suma, .usuario-siglas{
     background: #428EBA;
     border-radius: 3px;
     border: 1px #5197C0;
     color: #f3f3f3;
+    cursor: pointer;
     display: inline-block;
     font-weight: 700;
     float: left;
@@ -26,7 +27,31 @@ header{
     margin: 9px;
     min-width: 30px;
     padding: 0 19px;
-    position: relative;
+}
+.usuario-siglas{
+    background: #CDD2D4;
+    border: 1px #5197C0;
+    border-radius: 3px;
+    color: gray;
+    height: 33px;
+    font-size: 1em;
+    margin-left: 77%;
+    margin-top: -42px;
+    padding: 0 6px;
+}
+
+.usuario{
+    margin-top: -43px;
+    margin-left: 80%;
+    height: 34px;
+}
+
+.suma{
+    height: 34px;
+    padding: 0 7px;
+    margin-top: -30px;
+    margin-left: 49%;
+    font-size: 2em;
 }
 
 .logo-trello {
