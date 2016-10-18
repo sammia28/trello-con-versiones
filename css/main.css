@@ -9,8 +9,8 @@ body{
 /*header*/
 header{
     background-color: #0067A3;
-    height: 60px;
-    margin-bottom: 16px;
+    height: 3.5rem;
+    margin-bottom: 1rem;
     width: 100%;
 }
 
@@ -21,26 +21,28 @@ header{
     color: #f3f3f3;
     cursor: pointer;
     display: inline-block;
-    font-weight: 700;
     float: left;
+    font-family: sans-serif;
+    font-weight: 700;
     height: 30px;
     margin: 9px;
     min-width: 30px;
     padding: 0 19px;
+    
 }
+
 .usuario-siglas{
     background: #CDD2D4;
-    border: 1px #5197C0;
-    border-radius: 3px;
     color: gray;
     height: 33px;
     font-size: 1em;
     margin-left: 77%;
     margin-top: -42px;
-    padding: 0 6px;
+    padding: 0 7px;
 }
 
 .usuario{
+    font-family: sans-serif;
     margin-top: -43px;
     margin-left: 80%;
     height: 34px;
@@ -59,10 +61,18 @@ header{
     margin-top: 8px;
 }
 
+.iconos{
+    display: inline-block;
+    margin-top: -3%;
+    padding: 8px 1px;
+    cursor: pointer;
+    vertical-align: top;
+}
 /*header*/
 
 .lista-contenedor{
     border-radius: 5px;
+    font-family: sans-serif;
     margin-left: 1%;
     padding: 9px;
     width: 20%;
@@ -102,78 +112,85 @@ header{
 }
 
 #js-lista-input {
-    border-radius: 6px;
-    color: #919191;
     background: #D7D9DB;
-    padding: 7px 52px 7px 21px;
-    margin-left: 10px;
-    word-wrap: break-word;
+    border-radius: 6px;
     border-color: #AAAAAA;
+    color: #505050;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 7px 52px 7px 21px;
+    word-wrap: break-word;
 }
 
 #js-formularioLista {
+    background-color: #E2E4E6;
+    border-radius: 3px;
     height: auto;
     min-height: 30px;
     padding: 4px;
-    border-radius: 3px;
-    background-color: #E2E4E6;
     width: 107%;
 }
 
 #js-add-button {
     background: #5DB248;
     border-radius: 6px;
-    padding: 5px 17px;
-    margin-top: 1px;
     color: white;
+    margin-top: 1px;
     margin-bottom: 6px;
     margin-left: 10px;
+    padding: 5px 17px;
+    cursor: pointer;
 }
 
 .divContenedor{
     border-radius: 3px;
     display: inline-block;
-    width: 20%;
-    vertical-align: top;
     margin: 10px;
+    vertical-align: top;
+    width: 20%;
 }
 
 #botonNuevo{
-    width: 100%;
     background: #E2E4E6;
     border: none;
     color: #8F8F8F;
+    padding: 2px;
     text-decoration: underline;
+    width: 100%;
 }
 
 #spanCreado {
-    width: 100%;
-    background: #E2E4E6;
     border: none;
+    background: #E2E4E6;
     display: inline-block;
+    font-family: sans-serif;
     padding: 9px;
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .formNuevo {
-    padding: 0.5em;
     background: #E2E4E6;
+    padding: 0.5em;
 }
 
 .textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 5px;
     border-radius: 3px;
     border: none;
+    display: block;
+    margin-bottom: 5px;
     resize: none;
+    width: 100%;
+    font-family: sans-serif;
 }
 
 .botonTextArea {
     background: #5CAF46;
-    color: white;
     border: none;
-    padding: 5px 17px;
     border-radius: 5px;
+    color: white;
+    padding: 5px 17px;
 }
 
 .divCreado {

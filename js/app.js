@@ -14,13 +14,23 @@ function crearTrello (){
 		e.preventDefault();
 		aparecerTareas();
 		nuevaFila();
+		validarLista ();
 	});		
+	
+	function validarLista (){
+		if(listaInput.length.value =""){
+			btnGuardar.disable = true;
+			spanListaAgregada.style.display = "block";
+		}
+	}
+	
 	
 	function mostrarFormulario (e){
 		e.preventDefault();
 		spanListaAgregada.style.display="none";
 		formulario.style.display ="block";
 		listaInput.focus();
+		listaInput.value ="";
 	}
 	
 	elimina.addEventListener("click", cerrar);
@@ -39,16 +49,11 @@ function crearTrello (){
 		var botonNuevo = document.createElement("button");
 		spanCreado.setAttribute("id", "spanCreado");
 		botonNuevo.setAttribute("id", "botonNuevo");
+		
 		botonNuevo.innerHTML ="Añadir tarjeta...";
 		
 		spanListaAgregada.parentElement.appendChild(spanCreado);
 		spanListaAgregada.parentElement.appendChild(botonNuevo);
-		
-		if (listaInput.value){
-			btnGuardar.disabled = true;
-		}
-		
-		listaInput.value="";
 		
 		var divCreado = document.createElement("div");
 		botonNuevo.parentElement.insertBefore(divCreado,botonNuevo.parentElement.children[3]);
@@ -110,5 +115,33 @@ function crearTrello (){
 			formNuevo.style.display="none";
 			botonNuevo.style.display = "block";
 		}
+		
+//		funcion drag and drop 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 };
