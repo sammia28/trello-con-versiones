@@ -14,16 +14,7 @@ function crearTrello (){
 		e.preventDefault();
 		aparecerTareas();
 		nuevaFila();
-		validarLista ();
 	});		
-	
-	function validarLista (){
-		if(listaInput.length.value =""){
-			btnGuardar.disable = true;
-			spanListaAgregada.style.display = "block";
-		}
-	}
-	
 	
 	function mostrarFormulario (e){
 		e.preventDefault();
@@ -72,7 +63,6 @@ function crearTrello (){
 		nuevoDiv.appendChild(spanListaAgregada);
 		nuevoDiv.appendChild(formulario);
 		spanListaAgregada.style.display = "inline-block";
-		
 	}	
 	
 	function crearFormNuevo (content, botonNuevo){
@@ -91,6 +81,9 @@ function crearTrello (){
 		formNuevo.appendChild(botonTextArea);
 		botonTextArea.setAttribute("class", "botonTextArea");
 		botonTextArea.innerHTML ="Añadir";
+
+		formNuevo.addEventListener("drop", drop);
+		formNuevo.addEventListener("dragover", dropop);
 		
 		var eliminaTarjeta = document.createElement("a");
 		formNuevo.appendChild(eliminaTarjeta);
@@ -99,15 +92,17 @@ function crearTrello (){
 		eliminaTarjeta.textContent = "X";
 		
 		botonTextArea.addEventListener("click", function(e){
-				e.preventDefault();
-				formNuevo.style.display = "none";
+			e.preventDefault();
+			formNuevo.style.display = "none";
 
-				var newSpan = document.createElement("span");
-				newSpan.innerHTML = textArea.value;
-				content.appendChild(newSpan);
-				newSpan.setAttribute("class","newSpan");
-				newSpan.setAttribute("draggable", "true")
-				botonNuevo.style.display ="inline-block";						   
+			var newSpan = document.createElement("span");
+			newSpan.innerHTML = textArea.value;
+			content.appendChild(newSpan);
+			newSpan.setAttribute("class","newSpan");
+
+			newSpan.addEventListener("dragstart", arrastrar);
+			newSpan.setAttribute("draggable", "true")
+			botonNuevo.style.display ="inline-block";	
 		});	
 		
 		eliminaTarjeta.addEventListener("click", aparecerTarjeta);
@@ -117,6 +112,19 @@ function crearTrello (){
 		}
 		
 //		funcion drag and drop 
+		function dropop(e) {
+	    	e.preventDefault();
+		}
+
+		function arrastrar (e) {
+	    	e.dataTransfer.setData("text", e.target.id);
+		}
+
+		function drop(e) {
+	    	e.preventDefault();
+	    	var data = e.dataTransfer.getData("text");
+	    	e.target.appendChild(document.getElementById(data));
+		}
 		
 		
 		

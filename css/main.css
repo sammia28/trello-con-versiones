@@ -97,6 +97,7 @@ header{
     border-radius: 4px;
     color: #808080;
     display: block;
+    font-family: sans-serif;
     padding: 4px;
     margin: 5px;
     word-wrap: break-word;
@@ -201,6 +202,7 @@ header{
 #textareaElimina, #js-borrar{
     color: #999999;
     font-size: 18px;
+    font-family: sans-serif;
     line-height: 30px;
     margin-left: 18px;
     text-decoration: none;
