@@ -145,7 +145,12 @@ function crearTrello (){
 			newSpan.setAttribute("draggable", "true")
 			newSpan.setAttribute("id", identificador++);
 			newSpan.addEventListener("dragstart", arrastrar);
-			newSpan.addEventListener("dragend" , removerEstilo);
+			
+			newSpan.addEventListener("dragend", function(e) {
+			 e.target.style.border ="none";	
+				
+			});
+			
 			
 			function arrastrar (e) {
 				e.dataTransfer.setData("text", e.target.id);
